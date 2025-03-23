@@ -66,13 +66,13 @@ Our streaming pipeline architecture is as follows (from left to right):
 
 We use Apache Table API to 
 
-1. Define Source systems: **[accounts, transactions](#)**. [This python script](#) generates fake account and transaction data.
-2. Define how to process the data (enrich and attribute): **[Enriching with account data and attributing transactions ](#)**
-3. Define Sink system: **[sink](#)**
+1. Define Source systems: **[accounts, transactions](https://github.com/HuyPham235711/riskpipe/blob/main/datagen/gen_fake_data.py)**. [This python script]([datagen/gen_fake_data.py](https://github.com/HuyPham235711/riskpipe/blob/main/datagen/gen_fake_data.py)) generates fake account and transaction data.
+2. Define how to process the data (enrich and attribute): **[Enriching with account data and attributing transactions ](https://github.com/HuyPham235711/riskpipe/blob/main/code/process/attribute_transactions.sql)**
+3. Define Sink system: **[sink](https://github.com/HuyPham235711/riskpipe/blob/main/code/sink/attributed_transactions.sql)**
 
-The function **[run_transaction_attribution_job](#)** creates the sources, and sink and runs the data processing.
+The function **[run_transaction_attribution_job](https://github.com/HuyPham235711/riskpipe/blob/main/code/transaction_attribution.py#L92C1-L98C23)** creates the sources, and sink and runs the data processing.
 
-We store the SQL DDL and DML in the folders `source`, `process`, and `sink` corresponding to the above steps. We use [Jinja2](https://jinja.palletsprojects.com/en/3.1.x/) to replace placeholders with [config values](#). **The code is available [here](https://github.com/HuyPham235711/riskpipe_project).**
+We store the SQL DDL and DML in the folders `source`, `process`, and `sink` corresponding to the above steps. We use [Jinja2](https://jinja.palletsprojects.com/en/3.1.x/) to replace placeholders with [config values](https://github.com/HuyPham235711/riskpipe/blob/main/code/transaction_attribution.py#L15C1-L62C56). **The code is available [here](https://github.com/HuyPham235711/riskpipe_project).**
 
 ## Run streaming job
 
@@ -87,7 +87,7 @@ make run # restart all containers, & start streaming job
 1. **Apache Flink UI**: Open [http://localhost:8081/](http://localhost:8081/) or run `make ui` and click on `Jobs -> Running Jobs -> transaction-attribution-job` to see our running job. 
 2. **Graphana**: Visualize system metrics with Graphana, use the `make open` command or go to [http://localhost:3000](http://localhost:3000) via your browser (username: `admin`, password:`flink`).
 
-**Note**: transaction [Makefile](#) to see how/what commands are run. Use `make down` to spin down the containers.
+**Note**: transaction [Makefile](https://github.com/HuyPham235711/riskpipe/blob/main/Makefile) to see how/what commands are run. Use `make down` to spin down the containers.
 
 ## Check output
 
