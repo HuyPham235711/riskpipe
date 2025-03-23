@@ -27,7 +27,7 @@ Our objectives are:
 
 You can run this data pipeline using GitHub codespaces. Follow the instructions below.
 
-1. Create codespaces by going to the **[riskpipe_project](https://github.com/HuyPham235711/riskpipe_project)** repository, cloning(or fork) it and then clicking on `Create codespaces on main` button.
+1. Create codespaces by going to the **[riskpipe](https://github.com/HuyPham235711/riskpipe)** repository, cloning(or fork) it and then clicking on `Create codespaces on main` button.
 2. Wait for codespaces to start, then in the terminal type `make run`.
 3. Wait for `make run` to complete.
 4. Go to the `ports` tab and click on the link exposing port `8081` to access Flink UI and clicking on `Jobs -> Running Jobs -> checkout-attribution-job` to see our running job..
@@ -72,15 +72,15 @@ We use Apache Table API to
 
 The function **[run_transaction_attribution_job](https://github.com/HuyPham235711/riskpipe/blob/main/code/transaction_attribution.py#L92C1-L98C23)** creates the sources, and sink and runs the data processing.
 
-We store the SQL DDL and DML in the folders `source`, `process`, and `sink` corresponding to the above steps. We use [Jinja2](https://jinja.palletsprojects.com/en/3.1.x/) to replace placeholders with [config values](https://github.com/HuyPham235711/riskpipe/blob/main/code/transaction_attribution.py#L15C1-L62C56). **The code is available [here](https://github.com/HuyPham235711/riskpipe_project).**
+We store the SQL DDL and DML in the folders `source`, `process`, and `sink` corresponding to the above steps. We use [Jinja2](https://jinja.palletsprojects.com/en/3.1.x/) to replace placeholders with [config values](https://github.com/HuyPham235711/riskpipe/blob/main/code/transaction_attribution.py#L15C1-L62C56). **The code is available [here](https://github.com/HuyPham235711/riskpipe).**
 
 ## Run streaming job
 
 Clone and run the streaming job (via terminal) as shown below:
 
 ```bash
-git clone https://github.com/HuyPham235711/riskpipe_project
-cd riskpipe_project
+git clone https://github.com/HuyPham235711/riskpipe
+cd riskpipe
 make run # restart all containers, & start streaming job
 ```
 
