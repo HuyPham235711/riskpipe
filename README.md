@@ -1,5 +1,4 @@
-
-* [Calculate Risk Transaction Streaming Pipeline Project](#Calculate Risk Transaction Streaming Pipeline Project)
+* [Calculate Risk Transaction Streaming Pipeline Project](#calculate-risk-transaction-streaming-pipeline-project)
    * [Project](#project)
    * [Run on codespaces](#run-on-codespaces)
    * [Run locally](#run-locally)
